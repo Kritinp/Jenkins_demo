@@ -1,0 +1,22 @@
+pipeline { 
+    agent any
+    stages {
+        stage('Clone Git') {
+            steps {
+                git 'https://github.com/Kritinp/Jenkins_demo.git'
+            }
+        }
+        stage('Build Code') {
+            steps {
+                sh "chmod u+x calculator.py"
+                sh "python3 calculator.py"
+            }
+        }
+        stage('Test Set 2 (failures)') {
+            steps {
+                sh "chmod u+x unit_test2.py"
+                sh "./unit_test2.py"
+            }
+        }
+    } 
+}
