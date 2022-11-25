@@ -12,10 +12,10 @@ pipeline {
                 sh "python3 calculator.py"
             }
         }
-        stage('Test Set 1 (successes) ') {
+        stage('Test Set 2 (failures)') {
             steps {
-                sh "chmod u+x unit_test1.py"
-                sh "./unit_test1.py"
+                sh "chmod u+x unit_test2.py"
+                sh "./unit_test2.py"
             }
         }
     } 
